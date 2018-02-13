@@ -4,17 +4,22 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import { maybeGetCached, fetchAndCacheJson } from '../utils/fetch';
 import Async from '../components/Async';
-import md from '../utils/markdown';
+// import md from '../utils/markdown';
 import Title from '../components/Title';
+import PageHeader from '../components/PageHeader';
+import Container from '../components/Container';
+import { COLORS } from '../constants';
+import { random } from '../utils/colors';
+import { BlockExternalLink } from '../components/BlockLink';
 
 const LABEL_COLORS = {
-  blue: '#0079BF',
-  green: '#61BD4F',
-  lime: '#51E898',
-  yellow: '#F2D600',
-  orange: '#FFAB4A',
-  red: '#EB5A46',
-  purple: '#C377E0',
+  blue: COLORS.blue,
+  green: COLORS.green,
+  lime: COLORS.green,
+  yellow: COLORS.gold,
+  orange: COLORS.orange,
+  red: COLORS.red,
+  purple: COLORS.purple,
 };
 
 const Label = styled.span`
@@ -26,23 +31,21 @@ const Label = styled.span`
   margin-right: 0.5em;
 `;
 
-const CardLink = styled.a`
-  display: block;
+const CardTitle = styled.h3`
+  margin-bottom: 0.6rem;
+`;
+
+const CardLink = BlockExternalLink.extend`
   vertical-align: top;
-  color: inherit;
-  text-decoration: none;
   padding: 1rem;
-  margin-bottom: 0.4rem;
-  background: white;
 
   & *:last-child {
     margin-bottom: 0;
   }
-`;
 
-const CardTitle = styled.h3`
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
+  &:hover ${CardTitle} {
+    text-decoration: underline;
+  }
 `;
 
 const CardDescription = styled.p`
@@ -58,11 +61,11 @@ function Card(props) {
           {label.name}
         </Label>
       ))}
-      {props.card.desc && (
+      {/* {props.card.desc && (
         <CardDescription
           dangerouslySetInnerHTML={{ __html: md(props.card.desc) }}
         />
-      )}
+      )} */}
     </CardLink>
   );
 }
@@ -78,23 +81,42 @@ function Cards(props) {
 }
 
 const ListContainer = styled.div`
-  background: #eee;
-  padding: 1.4rem;
-  margin-bottom: 1.4rem;
+  position: relative;
+  padding: 0rem;
+  padding-left: 4.6rem;
+  margin-bottom: 5rem;
+  min-height: 20rem;
 
   & *:last-child {
     margin-bottom: 0;
   }
 `;
 
+const ListHeadingRotator = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transform: rotate(-90deg);
+`;
+
 const ListHeading = styled.h2`
-  font-size: 4rem;
+  position: absolute;
+  white-space: nowrap;
+  right: 0;
+  padding: 0.4rem 1rem;
+  font-size: 3rem;
+  font-family: silom;
+  color: ${() => random()};
 `;
 
 function List(props) {
   return (
     <ListContainer key={props.list.id}>
-      <ListHeading>{props.list.name}</ListHeading>
+      <ListHeadingRotator>
+        <ListHeading>{props.list.name}</ListHeading>
+      </ListHeadingRotator>
       <Cards
         cards={props.cards.filter(card => card.idList === props.list.id)}
       />
@@ -114,6 +136,7 @@ function Lists(props) {
 
 const BoardContainer = styled.div`
   position: relative;
+  margin-top: 5rem;
 `;
 
 const BoardCover = styled.div`
@@ -124,11 +147,13 @@ const BoardCover = styled.div`
 
 const BoardMessage = styled.p`
   position: fixed;
+  z-index: 1;
   display: inline-block;
   left: 50%;
   top: 50%;
   transform: translate(-50%, 0);
-  background: rgba(0, 0, 0, 0.5);
+  background: ${COLORS.blue};
+  font-family: silom;
   color: white;
   padding: 1rem 2rem;
   -webkit-font-smoothing: antialiased;
@@ -173,7 +198,7 @@ function getCached(): Data | null {
 
 function Board() {
   return (
-    <Async fetch={fetchData} cached={getCached()}>
+    <Async refetch fetch={fetchData} cached={getCached()}>
       {state => {
         if (state.data) {
           return (
@@ -204,8 +229,12 @@ function Board() {
 export default function Plans() {
   return (
     <div>
-      <Title>Plans</Title>
-      <Board />
+      <PageHeader>
+        <Title>Plans</Title>
+      </PageHeader>
+      <Container>
+        <Board />
+      </Container>
     </div>
   );
 }

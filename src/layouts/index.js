@@ -25,6 +25,7 @@ injectGlobal`
   body {
     margin: 0;
     color: #323330;
+    line-height: 1.6;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-kerning: normal;
@@ -47,7 +48,7 @@ injectGlobal`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-weight: 800;
     text-rendering: optimizeLegibility;
   }
 
@@ -197,11 +198,13 @@ injectGlobal`
   }
 `;
 
-const Content = styled.div`
-  margin-top: 2rem;
-`;
-
-export default function TemplateWrapper({ children, location }: () => Node) {
+export default function TemplateWrapper({
+  children,
+  location,
+}: {
+  children: () => Node,
+  location: Object,
+}) {
   return (
     <div>
       <Helmet
@@ -212,13 +215,7 @@ export default function TemplateWrapper({ children, location }: () => Node) {
         ]}
       />
       <Header />
-      {location.pathname === '/' ? (
-        children()
-      ) : (
-        <Container>
-          <Content>{children()}</Content>
-        </Container>
-      )}
+      {children()}
       <Footer />
     </div>
   );

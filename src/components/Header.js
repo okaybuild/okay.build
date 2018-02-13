@@ -23,11 +23,11 @@ const HeaderContainer = styled.div`
 
 const HeaderTitle = styled.h1`
   margin: 0;
-  font-size: 1em;
-  font-weight: 900;
+  font-size: 1.8em;
   letter-spacing: -0.05em;
 
   @media (min-width: 720px) {
+    font-size: 1.2em;
     display: inline-block;
     margin-right: 1em;
   }

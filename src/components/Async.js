@@ -2,6 +2,7 @@
 import React, { type Node } from 'react';
 
 type AsyncProps<Data> = {
+  refetch?: boolean,
   cached?: Data | null,
   fetch: () => Promise<Data>,
   children: (state: AsyncState<Data>) => Node,
@@ -24,6 +25,7 @@ export default class Async<Data> extends React.Component<
   };
 
   async componentDidMount() {
+    if (this.state.data && !this.state.refetch) return;
     this.setState({ loading: true });
     try {
       let data = await this.props.fetch();

@@ -2,34 +2,43 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import * as constants from '../constants';
+import Title from '../components/Title';
+import PageHeader from '../components/PageHeader';
+import Container from '../components/Container';
+import { BlockLink } from '../components/BlockLink';
+import { COLORS } from '../constants';
 
-const PostLink = styled(Link)`
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  padding: 1rem;
+const PostLink = BlockLink.extend`
+  padding: 2rem 0;
   margin-bottom: 1.4rem;
-  background: #f8f8f8;
 
   & *:last-child {
     margin-bottom: 0;
   }
+`;
 
-  &:hover {
-    background: ${constants.JS_YELLOW};
-  }
+const PostHeading = styled.h3`
+  font-size: 3rem;
+  font-weight: 800;
+`;
+
+const PostExcerpt = styled.p`
+  font-size: 1.2rem;
 `;
 
 export default function Blog({ data }: any) {
   return (
     <div>
-      <h1>Blog</h1>
+      <PageHeader>
+        <Title>Blog</Title>
+      </PageHeader>
       {data.allMarkdownRemark.edges.map(edge => {
         return (
           <PostLink key={edge.node.id} to={edge.node.frontmatter.path}>
-            <h3>{edge.node.frontmatter.title}</h3>
-            <p>{edge.node.excerpt}</p>
+            <Container>
+              <PostHeading>{edge.node.frontmatter.title}</PostHeading>
+              <PostExcerpt>{edge.node.excerpt}</PostExcerpt>
+            </Container>
           </PostLink>
         );
       })}
