@@ -63,7 +63,7 @@ const HeroEmoji = styled.h3`
 export default function Home() {
   return (
     <div>
-      <Hero bgColor={COLORS.pink} color="white">
+      <Hero bgColor={COLORS.pink.bg} color="white">
         <Container>
           <HeroTitle>
             An open team creating <wbr />
@@ -72,7 +72,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.green} color="rgba(0, 0, 0, 0.5)">
+      <Hero bgColor={COLORS.green.bg} color="rgba(0, 0, 0, 0.5)">
         <Container>
           <HeroText>
             Our mission is to develop a modern front-end development toolchain
@@ -82,7 +82,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.yellow} color="rgba(0, 0, 0, 0.53)">
+      <Hero bgColor={COLORS.yellow.bg} color="rgba(0, 0, 0, 0.53)">
         <Container>
           <HeroText>
             We create tools, libraries, frameworks, services, bots, workflows,
@@ -92,7 +92,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.orange} color="rgba(0, 0, 0, 0.52)">
+      <Hero bgColor={COLORS.orange.bg} color="rgba(0, 0, 0, 0.52)">
         <Container>
           <HeroText>
             In order to achieve this goal, we believe we must collaborate with
@@ -102,7 +102,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.purple} color="rgba(0, 0, 0, 0.55)">
+      <Hero bgColor={COLORS.purple.bg} color="rgba(0, 0, 0, 0.55)">
         <Container>
           <HeroText>
             Anything that we can be open with, we will be. Our plans, our
