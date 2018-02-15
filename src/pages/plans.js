@@ -1,34 +1,40 @@
 // @flow
 import React from 'react';
 import Link from 'gatsby-link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { maybeGetCached, fetchAndCacheJson } from '../utils/fetch';
 import Async from '../components/Async';
 // import md from '../utils/markdown';
 import Title from '../components/Title';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import { COLORS } from '../constants';
-import { random } from '../utils/colors';
+import * as colors from '../utils/colors';
 import { BlockExternalLink } from '../components/BlockLink';
 
 const LABEL_COLORS = {
-  blue: COLORS.blue,
-  green: COLORS.green,
-  lime: COLORS.green,
-  yellow: COLORS.gold,
-  orange: COLORS.orange,
-  red: COLORS.red,
-  purple: COLORS.purple,
+  blue: colors.PRIMARY_COLORS.blue,
+  green: colors.PRIMARY_COLORS.green,
+  lime: colors.PRIMARY_COLORS.pink,
+  yellow: colors.PRIMARY_COLORS.yellow,
+  orange: colors.PRIMARY_COLORS.orange,
+  red: colors.PRIMARY_COLORS.red,
+  purple: colors.PRIMARY_COLORS.purple,
 };
 
 const Label = styled.span`
   display: inline-block;
   font-size: 0.8em;
-  background: ${props => LABEL_COLORS[props.color] || props.color};
   padding: 0.2em 0.6em;
-  color: white;
   margin-right: 0.5em;
+  -webkit-font-smoothing: antialiased;
+  ${props => {
+    let color = LABEL_COLORS[props.color];
+
+    return css`
+      background: ${color};
+      color: ${colors.highContrast(color)};
+    `;
+  }};
 `;
 
 const CardTitle = styled.h3`
@@ -108,7 +114,8 @@ const ListHeading = styled.h2`
   padding: 0.4rem 1rem;
   font-size: 3rem;
   font-family: silom;
-  color: ${() => random()};
+  color: ${() =>
+    colors.text('#ffffff', colors.random(colors.PRIMARY_COLORS), 6)};
 `;
 
 function List(props) {
@@ -152,7 +159,7 @@ const BoardMessage = styled.p`
   left: 50%;
   top: 50%;
   transform: translate(-50%, 0);
-  background: ${COLORS.blue};
+  background: ${colors.PRIMARY_COLORS.blue};
   font-family: silom;
   color: white;
   padding: 1rem 2rem;

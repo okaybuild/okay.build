@@ -1,28 +1,27 @@
 // @flow
 import styled, { css } from 'styled-components';
 import Link from 'gatsby-link';
-import { random } from '../utils/colors';
+import * as colors from '../utils/colors';
 import { triad } from 'chromatism';
 
-function getColors(highlight) {
-  let a = random();
-  let b = triad(a).hex[2];
+function getColors(highlight, size = 4) {
+  let { fg, bg } = colors.random(colors.PRIMARY_COLOR_PAIRS);
 
   if (highlight) {
     return css`
-      background: ${a};
-      color: ${b};
+      background: ${bg};
+      color: ${colors.text(bg, fg, size)};
       &:hover {
-        background: ${b};
-        color: ${a};
+        background: ${fg};
+        color: ${colors.text(fg, bg, size)};
       }
     `;
   } else {
     return css`
       color: inherit;
       &:hover {
-        background: ${a};
-        color: ${b};
+        background: ${bg};
+        color: ${colors.text(bg, fg, size)};
       }
     `;
   }
@@ -31,7 +30,8 @@ function getColors(highlight) {
 export const BlockLink = styled(Link)`
   display: block;
   text-decoration: none;
-  ${props => getColors(props.highlight)};
+  -webkit-font-smoothing: antialiased;
+  ${props => getColors(props.highlight, props.size)};
 `;
 
 export const BlockExternalLink = BlockLink.withComponent('a');

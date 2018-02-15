@@ -1,19 +1,17 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import styled, { css } from 'styled-components';
-import { random } from '../utils/colors';
-import { triad } from 'chromatism';
+import * as colors from '../utils/colors';
 import Container from './Container';
 import Title from './Title';
 
 const PageHeaderContainer = styled.div`
   padding: 1rem 0;
   ${() => {
-    let a = random();
-    let b = triad(a).hex[2];
+    let { fg, bg } = colors.random(colors.PRIMARY_COLOR_PAIRS);
     return css`
-      background: ${a};
-      color: ${b};
+      background: ${bg};
+      color: ${colors.text(bg, fg)};
     `;
   }};
 
@@ -22,7 +20,7 @@ const PageHeaderContainer = styled.div`
   }
 `;
 
-export default function PageHeader(props) {
+export default function PageHeader(props: { children: Node }) {
   return (
     <PageHeaderContainer>
       <Container>{props.children}</Container>

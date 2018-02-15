@@ -2,14 +2,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled, { css } from 'styled-components';
-import { COLORS } from '../constants';
+import * as colors from '../utils/colors';
 import Container from '../components/Container';
-import { triad } from 'chromatism';
 
 const Hero = styled.div`
   padding: 6rem 0;
-  background: ${props => props.bgColor};
-  color: ${props => triad(props.bgColor).hex[2]};
+  background: ${props => props.bg};
+  color: ${props => props.fg};
   text-transform: lowercase;
   -webkit-font-smoothing: antialiased;
 
@@ -63,7 +62,7 @@ const HeroEmoji = styled.h3`
 export default function Home() {
   return (
     <div>
-      <Hero bgColor={COLORS.pink.bg} color="white">
+      <Hero {...colors.PRIMARY_COLOR_PAIRS.pink}>
         <Container>
           <HeroTitle>
             An open team creating <wbr />
@@ -72,7 +71,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.green.bg} color="rgba(0, 0, 0, 0.5)">
+      <Hero {...colors.PRIMARY_COLOR_PAIRS.green}>
         <Container>
           <HeroText>
             Our mission is to develop a modern front-end development toolchain
@@ -82,7 +81,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.yellow.bg} color="rgba(0, 0, 0, 0.53)">
+      <Hero {...colors.PRIMARY_COLOR_PAIRS.yellow}>
         <Container>
           <HeroText>
             We create tools, libraries, frameworks, services, bots, workflows,
@@ -92,7 +91,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.orange.bg} color="rgba(0, 0, 0, 0.52)">
+      <Hero {...colors.PRIMARY_COLOR_PAIRS.orange}>
         <Container>
           <HeroText>
             In order to achieve this goal, we believe we must collaborate with
@@ -102,7 +101,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor={COLORS.purple.bg} color="rgba(0, 0, 0, 0.55)">
+      <Hero {...colors.PRIMARY_COLOR_PAIRS.purple}>
         <Container>
           <HeroText>
             Anything that we can be open with, we will be. Our plans, our
@@ -112,7 +111,7 @@ export default function Home() {
         </Container>
       </Hero>
 
-      <Hero bgColor="#fff">
+      <Hero bg="white" fg="black">
         <Container>
           <HeroEmoji>👌</HeroEmoji>
         </Container>

@@ -6,9 +6,7 @@ import Async from '../components/Async';
 import Title from '../components/Title';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import { COLORS } from '../constants';
 import { maybeGetCached, fetchAndCacheJson } from '../utils/fetch';
-import { random } from '../utils/colors';
 import { BlockExternalLink } from '../components/BlockLink';
 
 const PROJECTS = [
@@ -88,6 +86,7 @@ function Project(props) {
       {state => (
         <ProjectLink
           // highlight
+          size={10}
           href={`https://github.com/${props.project.repo}`}>
           <Container>
             <ProjectHeading>{props.project.name}</ProjectHeading>

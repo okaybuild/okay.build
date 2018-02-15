@@ -1,7 +1,6 @@
 ---
-path: "/blog/hello-world"
-date: "2018-02-07"
-title: "Hello, World!"
+path: "/docs/welcome"
+title: "Welcome"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
