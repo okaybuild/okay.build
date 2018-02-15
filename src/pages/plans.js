@@ -188,12 +188,13 @@ type Data = {
 const LISTS_URL = 'https://api.trello.com/1/boards/6HO4yHKP/lists';
 const CARDS_URL = 'https://api.trello.com/1/boards/6HO4yHKP/cards';
 
-async function fetchData(): Promise<Data> {
-  let [lists, cards] = await Promise.all([
+function fetchData(): Promise<Data> {
+  return Promise.all([
     fetchAndCacheJson(LISTS_URL),
     fetchAndCacheJson(CARDS_URL),
-  ]);
-  return { lists, cards };
+  ]).then(([lists, cards]) => {
+    return { lists, cards };
+  });
 }
 
 function getCached(): Data | null {

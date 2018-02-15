@@ -6,7 +6,6 @@ import Title from '../components/Title';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import { BlockLink } from '../components/BlockLink';
-import { COLOR_PAIRS } from '../constants';
 
 const PostLink = BlockLink.extend`
   padding: 2rem 0;
@@ -47,13 +46,16 @@ export default function Blog({ data }: any) {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query BlogIndexQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      filter: { id: { regex: "/blog/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id

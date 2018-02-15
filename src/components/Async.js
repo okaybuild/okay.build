@@ -24,15 +24,17 @@ export default class Async<Data> extends React.Component<
     data: this.props.cached || null,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     if (this.state.data && !this.state.refetch) return;
     this.setState({ loading: true });
-    try {
-      let data = await this.props.fetch();
-      this.setState({ loading: false, data });
-    } catch (error) {
-      this.setState({ loading: false, error });
-    }
+    this.props
+      .fetch()
+      .then(data => {
+        this.setState({ loading: false, data });
+      })
+      .catch(error => {
+        this.setState({ loading: false, error });
+      });
   }
 
   render() {
