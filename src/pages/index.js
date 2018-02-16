@@ -19,18 +19,23 @@ const Hero = styled.div`
 
 const HeroTitle = styled.h1`
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-align: center;
-  white-space: pre;
+
   font-family: silom;
   color: white;
 
+  @media (min-width: 380px) {
+    font-size: 2.2rem;
+  }
+
   @media (min-width: 480px) {
-    font-size: 2rem;
+    font-size: 2.6rem;
   }
 
   @media (min-width: 720px) {
     font-size: 3rem;
+    white-space: pre;
   }
 
   @media (min-width: 960px) {
@@ -40,9 +45,13 @@ const HeroTitle = styled.h1`
 
 const HeroText = styled.h3`
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   font-family: silom;
+
+  @media (min-width: 480px) {
+    font-size: 1.2rem;
+  }
 
   @media (min-width: 720px) {
     font-size: 1.4rem;

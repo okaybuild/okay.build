@@ -51,8 +51,20 @@ const PROJECTS = [
 const GITHUB_API_PREFIX = 'https://api.github.com/repos/';
 
 const ProjectHeading = styled.h3`
-  font-size: 4rem;
+  font-size: 2.5rem;
   margin-bottom: 0.4rem;
+
+  @media (min-width: 480px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 720px) {
+    font-size: 3.5rem;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 4rem;
+  }
 `;
 
 const ProjectLink = BlockExternalLink.extend`
@@ -68,15 +80,31 @@ const ProjectLink = BlockExternalLink.extend`
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   margin-bottom: 0;
   font-weight: 800;
+
+  @media (min-width: 480px) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: 720px) {
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 2rem;
+  }
 `;
 
 const ProjectMeta = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
+
+  @media (min-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 function Project(props) {
