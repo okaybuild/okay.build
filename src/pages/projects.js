@@ -14,10 +14,10 @@ const PROJECTS = [
     name: 'Bolt',
     repo: 'boltpkg/bolt',
   },
-  {
-    name: 'Projector',
-    repo: 'projectorjs/projector',
-  },
+  // {
+  //   name: 'Projector',
+  //   repo: 'projectorjs/projector',
+  // },
   {
     name: 'Glow',
     repo: 'jamiebuilds/glow',
@@ -38,14 +38,14 @@ const PROJECTS = [
     name: 'Popular Package',
     repo: 'ajaymathur/popular-package',
   },
-  {
-    name: 'Shimiteer',
-    repo: 'jamiebuilds/shimiteer',
-  },
-  {
-    name: 'Paranormal',
-    repo: 'jamiebuilds/paranormal',
-  },
+  // {
+  //   name: 'Shimiteer',
+  //   repo: 'jamiebuilds/shimiteer',
+  // },
+  // {
+  //   name: 'Paranormal',
+  //   repo: 'jamiebuilds/paranormal',
+  // },
 ];
 
 const GITHUB_API_PREFIX = 'https://api.github.com/repos/';
