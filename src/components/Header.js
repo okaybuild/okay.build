@@ -33,6 +33,17 @@ const HeaderTitle = styled.h1`
   }
 `;
 
+const HeaderNav = styled.div`
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+
+  @media (min-width: 720px) {
+    display: inline;
+    width: auto;
+  }
+`;
+
 const HeaderLink = styled(Link)`
   display: block;
   padding: 0.5rem 0;
@@ -57,10 +68,12 @@ const Header = () => (
         <HeaderLink to="/">okay.build</HeaderLink>
       </HeaderTitle>
 
-      <HeaderLink to="/projects">Projects</HeaderLink>
-      <HeaderLink to="/docs">Docs</HeaderLink>
-      <HeaderLink to="/plans">Plans</HeaderLink>
-      <HeaderLink to="/blog">Blog</HeaderLink>
+      <HeaderNav>
+        <HeaderLink to="/projects">Projects</HeaderLink>
+        <HeaderLink to="/docs">Docs</HeaderLink>
+        <HeaderLink to="/plans">Plans</HeaderLink>
+        <HeaderLink to="/blog">Blog</HeaderLink>
+      </HeaderNav>
     </Container>
   </HeaderContainer>
 );
