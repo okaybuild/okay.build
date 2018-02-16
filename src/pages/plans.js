@@ -42,7 +42,12 @@ const Label = styled.span`
 `;
 
 const CardTitle = styled.h3`
+  font-size: 1.2rem;
   margin-bottom: 0.6rem;
+
+  @media (min-width: 720px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const CardLink = BlockExternalLink.extend`
@@ -92,34 +97,46 @@ function Cards(props) {
 
 const ListContainer = styled.div`
   position: relative;
-  padding: 0rem;
-  padding-left: 4.6rem;
+  padding: 0;
   margin-bottom: 5rem;
   min-height: 20rem;
 
-  & *:last-child {
+  & > *:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: 720px) {
+    padding-left: 4.6rem;
   }
 `;
 
 const ListHeadingRotator = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  transform: rotate(-90deg);
+  @media (min-width: 720px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transform: rotate(-90deg);
+  }
 `;
 
 const ListHeading = styled.h2`
-  position: absolute;
-  white-space: nowrap;
-  right: 0;
-  padding: 0.4rem 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   font-family: silom;
+  text-align: center;
   color: ${() =>
     colors.text('#ffffff', colors.random(colors.PRIMARY_COLORS), 6)};
+
+  @media (min-width: 720px) {
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+    padding: 0.4rem 1rem;
+    font-size: 3rem;
+    text-align: left;
+  }
 `;
 
 function List(props) {

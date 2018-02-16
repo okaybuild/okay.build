@@ -11,7 +11,7 @@ function getColors(highlight, size = 4) {
     return css`
       background: ${bg};
       color: ${colors.text(bg, fg, size)};
-      &:hover {
+      &:hover, &:active {
         background: ${fg};
         color: ${colors.text(fg, bg, size)};
       }
@@ -19,7 +19,7 @@ function getColors(highlight, size = 4) {
   } else {
     return css`
       color: inherit;
-      &:hover {
+      &:hover, &:active {
         background: ${bg};
         color: ${colors.text(bg, fg, size)};
       }
