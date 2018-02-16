@@ -6,8 +6,18 @@ import styled, { injectGlobal } from 'styled-components';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
+import silomWoff2 from '../fonts/silom.woff2';
+import silomWoff from '../fonts/silom.woff';
 
 injectGlobal`
+  @font-face {
+    font-family: 'silom';
+    src: url('${silomWoff2}') format('woff2'),
+         url('${silomWoff}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   *,
   ::before,
   ::after {

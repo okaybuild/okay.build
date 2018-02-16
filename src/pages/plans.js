@@ -14,7 +14,8 @@ import { BlockExternalLink } from '../components/BlockLink';
 const LABEL_COLORS = {
   blue: colors.PRIMARY_COLORS.blue,
   green: colors.PRIMARY_COLORS.green,
-  lime: colors.PRIMARY_COLORS.pink,
+  pink: colors.PRIMARY_COLORS.pink,
+  lime: colors.PRIMARY_COLORS.green,
   yellow: colors.PRIMARY_COLORS.yellow,
   orange: colors.PRIMARY_COLORS.orange,
   red: colors.PRIMARY_COLORS.red,
@@ -28,11 +29,14 @@ const Label = styled.span`
   margin-right: 0.5em;
   -webkit-font-smoothing: antialiased;
   ${props => {
-    let color = LABEL_COLORS[props.color];
+    let match = LABEL_COLORS[props.color];
+    if (!match) console.warn(`Missing label color: ${props.color}`);
+    let bg = match || 'black';
+    let fg = match ? colors.highContrast(match) : 'white';
 
     return css`
-      background: ${color};
-      color: ${colors.highContrast(color)};
+      background: ${bg};
+      color: ${fg};
     `;
   }};
 `;
