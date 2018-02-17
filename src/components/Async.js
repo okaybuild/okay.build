@@ -25,7 +25,7 @@ export default class Async<Data> extends React.Component<
   };
 
   componentDidMount() {
-    if (this.state.data && !this.state.refetch) return;
+    if (this.state.data && !this.props.refetch) return;
     this.setState({ loading: true });
     this.props
       .fetch()

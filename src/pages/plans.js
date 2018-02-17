@@ -4,7 +4,6 @@ import Link from 'gatsby-link';
 import styled, { css } from 'styled-components';
 import { maybeGetCached, fetchAndCacheJson } from '../utils/fetch';
 import Async from '../components/Async';
-// import md from '../utils/markdown';
 import Title from '../components/Title';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
@@ -76,11 +75,6 @@ function Card(props) {
           {label.name}
         </Label>
       ))}
-      {/* {props.card.desc && (
-        <CardDescription
-          dangerouslySetInnerHTML={{ __html: md(props.card.desc) }}
-        />
-      )} */}
     </CardLink>
   );
 }
