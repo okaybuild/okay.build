@@ -4,21 +4,26 @@ import Helmet from 'react-helmet';
 import Container from '../components/Container';
 import PageHeader from '../components/PageHeader';
 import Title from '../components/Title';
+import MarkdownContent from '../components/MarkdownContent';
 
-const Content = styled.div`
-  margin-top: 4rem;
+const Author = styled.p`
+  font-size: 1.8rem;
+  font-family: silom;
 `;
 
 export default function Template({ data }) {
-  const post = data.markdownRemark;
+  let post = data.markdownRemark;
+  let { title, author } = post.frontmatter;
+
   return (
     <div>
       <Helmet title={`okay.build - blog - ${post.frontmatter.title}`} />
       <PageHeader>
-        <Title>{post.frontmatter.title}</Title>
+        <Title>{title}</Title>
+        <Author>By {author}</Author>
       </PageHeader>
       <Container>
-        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
     </div>
   );
@@ -32,6 +37,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        author
       }
     }
   }

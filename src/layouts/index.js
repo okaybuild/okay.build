@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Container from '../components/Container';
 import silomWoff2 from '../fonts/silom.woff2';
 import silomWoff from '../fonts/silom.woff';
+import * as colors from '../utils/colors';
 
 injectGlobal`
   @font-face {
@@ -102,9 +103,9 @@ injectGlobal`
   hr {
     margin-top: 0;
     margin-bottom: calc(1.45rem - 1px);
-    background: hsla(0, 0%, 0%, 0.2);
+    background: ${colors.PRIMARY_COLORS.green};
     border: none;
-    height: 1px;
+    height: 5px;
   }
 
   b, strong, dt, th {
