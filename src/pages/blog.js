@@ -31,16 +31,20 @@ export default function Blog({ data }: any) {
       <PageHeader>
         <Title>Blog</Title>
       </PageHeader>
-      {data.allMarkdownRemark.edges.map(edge => {
-        return (
-          <PostLink key={edge.node.id} to={edge.node.frontmatter.path}>
-            <Container>
-              <PostHeading>{edge.node.frontmatter.title}</PostHeading>
-              <PostExcerpt>{edge.node.excerpt}</PostExcerpt>
-            </Container>
-          </PostLink>
-        );
-      })}
+      {data.allMarkdownRemark.edges
+        .filter(edge => {
+          return !!edge.node.frontmatter.published;
+        })
+        .map(edge => {
+          return (
+            <PostLink key={edge.node.id} to={edge.node.frontmatter.path}>
+              <Container>
+                <PostHeading>{edge.node.frontmatter.title}</PostHeading>
+                <PostExcerpt>{edge.node.excerpt}</PostExcerpt>
+              </Container>
+            </PostLink>
+          );
+        })}
     </div>
   );
 }
@@ -64,6 +68,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            published
           }
         }
       }

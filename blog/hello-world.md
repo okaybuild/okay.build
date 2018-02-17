@@ -1,8 +1,9 @@
 ---
 path: "/blog/hello-world"
-date: "2018-02-07"
+date: "2018-02-17"
 title: "Hello, World!"
 author: "Jamie K"
+published: false
 ---
 
 We've all been asking ourselves for awhile about how we make open source
