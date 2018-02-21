@@ -22,11 +22,11 @@ and many more. I've been working primarily in open source for the last 4 years.
 It's incredibly rewarding, but it's also extremely stressful and it's really
 hard to stay motivated in a sustainable way.
 
-I've been saying for awhile that open source would fine if we just had a team
-of people focused on open source full-time. Open source tends to be powered by
-people who need to put on many different hats. You're the CEO, the janitor, the
-politician, and sometimes the movie star. It's too much, and it prevents so
-many people from getting more into the open source ecosystem.
+I've been saying for awhile that open source would be fine if we just had a
+team of people focused on open source full-time. Open source tends to be
+powered by people who need to put on many different hats. You're the CEO, the
+janitor, the politician, and sometimes the movie star. It's too much, and it
+prevents so many people from getting more into the open source ecosystem.
 
 We need teammates, managers, and all the rest. We need a team of people who
 work together to make plans, delegate responsibilities, and review eachother's
