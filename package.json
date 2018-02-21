@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "flow-bin": "^0.65.0",
+    "gatsby-plugin-catch-links": "^1.0.16",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2"

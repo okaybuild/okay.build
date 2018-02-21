@@ -6,93 +6,115 @@ author: "Jamie K"
 published: false
 ---
 
-We've all been asking ourselves for awhile about how we make open source
-sustainable. There's a lot of very different ideas about it, but the one thing
-that everyone agrees on is that people need to start getting paid.
+In the open source community, we've all been asking ourselves for awhile how
+we can make open source more sustainable. There's a lot of very different ideas
+about it, but the one thing that everyone agrees on is that more people need to
+start getting paid for their open source work.
 
-My name is Jamie. I'm an open source developer and you may know some of my work,
-whether it be on Babel, Yarn, Flow, Lerna, Marionette, or [others](https://jamie.build/#code).
-Open source has been incredibly rewarding to me, but it's a massive burden and
-it's really hard to stay motivated.
+At Atlassian, we've been wondering how to build better developer tools for our
+teams. We decided that open source was a huge part of that. We need to work
+closely with the community to make sure that we're building tools that are
+going to continue working for us years into the future.
 
-I've been saying for awhile that open source would be fine if I just had a team
-of people around me all focused on it. If I had other developers who I could
-plan and make decisions with, if I had a manager delegating work, if I had a
-organization which could move resources around when needed and fund important
-work.
+My name is Jamie. I'm an open source developer at Atlassian, I primarily work
+on tools for front-end developers like Babel, Yarn, Flow, Lerna, Marionette,
+and many more. I've been working primarily in open source for the last 4 years.
+It's incredibly rewarding, but it's also extremely stressful and it's really
+hard to stay motivated in a sustainable way.
+
+I've been saying for awhile that open source would fine if we just had a team
+of people focused on open source full-time. Open source tends to be powered by
+people who need to put on many different hats. You're the CEO, the janitor, the
+politician, and sometimes the movie star. It's too much, and it prevents so
+many people from getting more into the open source ecosystem.
+
+We need teammates, managers, and all the rest. We need a team of people who
+work together to make plans, delegate responsibilities, and review eachother's
+work. We need an organization that can move around resources as necessary and
+fund important work.
 
 **okay.build** is my team's attempt at doing that.
 
----
+## Public Source vs. Open Source
 
-Recently I joined [Atlassian](https://www.atlassian.com) after contracting with
-them for the last 8 months. In that time, every line of code that I have
-written was open source. The org that I've been working in "Product Fabric"
-already did that by default.
+We were born out of an org at Atlassian called "Product Fabric" which focuses
+on building components and services which can be used together to build all of
+Atlassian's products. Almost all of the code written in Product Fabric is open
+source. You can see the [source code on Bitbucket][atlaskit].
 
-But a lot of this boiled down to what I call "public source". It's technically
-open source because of the licensing and the fact that the code is publicly
-accessible, but it doesn't really resemble the open source community in any
-other way.
+But a lot of this boils down to what we've started to call "public source".
+It's _technically_ open source because of its licensing and publicly accesible
+source code. But it doesn't really resemble all the values of the open source
+community.
 
-All of our planning, all of our development, it all happened internally behind
-walls others couldn't see through. Externally you would have very little idea
-about what we're doing at any time. Only the results of our work are public.
+All of the planning and development happens internally. Non-Atlassian's would
+have a tough time figuring out what we are doing at any given time, and they
+don't have nearly as much opportunity to get involved as they should.
 
-We set out to create a new front-end build systems team at Atlassian late last
-year to speed up front-end teams and enable them to build better user
-experiences.
+Lots of companies find themselves in this situation. They go through the
+process of open sourcing a piece of code, but without really engaging with the
+open source community, they never get any of the benefits back. It's lead to
+companies really underestimating the impact open source can have.
 
-When we looked at the tooling we'd be working with and on, from package
-managers to compilers to testing frameworks and a whole lot more, it only made
-sense that everything we'd work on would be open source.
+## Building the Build
 
-Even further, it made sense that we really embed ourselves in the open source
-ecosystem. We weren't going to fork everything and create our own platform, that
-would be a complete failure. Instead, we can work with the existing community
-and improve it as a whole.
+Late last year we set out to create a new front-end build systems team at
+Atlassian to speed up front-end teams and enable them to build better user
+experiences by removing techincal limitations.
 
-So we needed to become a truly **open** team. And the more we talked to people
-about it, the further we wanted to take it. We went from just wanting our code
-to be public to wanting our planning, our communication, our quarterly reports,
-our onboarding processes, our documentation, and everything else we can think
-of all to be public.
+We focus on everything from package managers, to compilers, to testing
+frameworks, documentation, examples, and a whole lot more. When we started
+planning out how we'll make all these things work well together, we knew we'd
+have to be integrated with the rest of the open source community or we'd end
+up forking the entire ecosystem internally.
 
-We were making so many things public that it got to the point where we were
-questioning, is this even an "Atlassian" team? We look a lot more like a
-framework core team or some sort of foundation.
+Through open source, everyone has the opportunity to set the standards for our
+shared toolchain. That's the kind of impact that we want to have, and to do it
+we need to embed ourselves in the open source community.
 
-So instead of being an open team at Atlassian, what if we were an open team
-that any one can join as part of their company or even as an individual? The
-members of the team can continue being paid by their companies, just as
-Atlassian will be paying their employees (including myself) to be part of this
-team.
+## Opening up
 
-That's why you don't see company branding on this site. That's why some of
-the projects are in other GitHub orgs. That's why we can create projects
-whenever we want without a company's legal team's approval. That's why our
-projects can be MIT licensed. That's why we allow ourselves to be influenced by
-others and change direction as we see fit.
+To become a fully open team, we decided we needed to make everything we could
+public. We need to default to making things open instead of closed.
 
-We still need to accomplish things at our companies. But considering how
-impactful open source is on the way that people work, it's very easy to do.
+So here's what we have so far:
 
-If you want to join our team, just come talk to one of us about it. There's no
-barrier to entry other than willingness to contribute something positive. And
-if you want to get paid for your contributions, come talk to our team members
-about Atlassian or somewhere else and we might hire you to do this full time.
+- All of our planning will be on a [public Trello board](/plans).
+- All of our documentation will be up [on a public website](/docs).
+- All of our processes will be [documented publicly](/docs).
+- All of our reports will be up on a [public blog](/blog).
+- We can invite anyone to join pur planning meetings as often as needed.
+- We will develop code in [public repos from day one](/projects).
 
-This might start to sound a bit like a foundation. But it's much more open than
-most foundations. We're a group of people supporting and contributing to open
-source projects without trying to assert any kind of ownership.
+As we went through everything that we do, there was very little that we saw
+which couldn't just be public. There was no value in keeping things behind
+closed doors, and by defaulting to making everything public means that we are
+open without any additional effort.
 
----
+## okay.build
 
-I want to thank Atlassian for getting this started. I really can't believe how
-supportive they've been of every idea we've had here. I'm really excited to be
-joining a company which is this empowering.
+We were making so many things public, that it started to feel a lot like the
+core team of an open source project than a team at a company. And we realized
+that we could benefit a lot from structuring our team so that "external"
+collaborators could join and feel like an equal part of our team.
+
+So we're trying to structure ourselves so that people that want a part in
+building out next generation developer tools can do so with us, either as an
+individual or as part of another company.
+
+We've named our team **okay.build** because we wanted something that anyone
+could feel a part of. So that it doesn't become "That Atlassian Team".
+
+## Thanks
+
+I really want to thank Atlassian for getting this started. I really can't
+believe how supportive everyone has been of every idea we've had. Even when
+they've been really _out there_. I'm really really excited by the work that
+we're going to be able to do.
 
 I also want to thank [Orta Therox](https://twitter.com/orta) for helping shape
 our thinking about this. His team at Artsy has been doing "open source by
 default" for awhile and their experience had a big impact on the work that we
 are doing.
+
+[atlaskit]: http://bitbucket.org/atlassian/atlaskit-mk-2
